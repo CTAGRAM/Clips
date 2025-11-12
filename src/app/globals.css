@@ -1,3 +1,11 @@
+/* Updated: 2025-11-12T15:43:53.527Z */
+/* Updated: 2025-11-12T15:41:03.545Z */
+/* Updated: 2025-11-12T15:24:27.917Z */
+/* Updated: 2025-11-12T15:19:02.141Z */
+/* Updated: 2025-11-12T14:47:08.247Z */
+/* Updated: 2025-11-12T12:07:55.390Z */
+/* Updated: 2025-11-12T12:07:39.655Z */
+/* Updated: 2025-11-12T10:21:58.758Z */
 /* Updated: 2025-11-12T09:37:40.432Z */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap');
 @import "tailwindcss";
@@ -14,7 +22,7 @@
   --color-popover: #0D0D1A;
   --color-popover-foreground: #FFFFFF;
 
-  --color-primary: #C8E6C9;
+  --color-primary: #9EEABE; /* updated to match provided image */
   --color-primary-foreground: #000000;
 
   --color-secondary: #E8F5E9;
@@ -31,7 +39,7 @@
 
   --color-border: #2A2A3A;
   --color-input: rgba(255, 255, 255, 0.1);
-  --color-ring: #C8E6C9;
+  --color-ring: #9EEABE; /* updated to match primary */
 
   --color-chart-1: #e67e22;
   --color-chart-2: #2d8659;
@@ -42,11 +50,11 @@
   --color-sidebar: #F5F5F5;
   --color-sidebar-foreground: #000000;
   --color-sidebar-primary: #000000;
-  --color-sidebar-primary-foreground: #C8E6C9;
+  --color-sidebar-primary-foreground: #9EEABE; /* updated to match primary */
   --color-sidebar-accent: #E8F5E9;
   --color-sidebar-accent-foreground: #000000;
   --color-sidebar-border: #E5E5E5;
-  --color-sidebar-ring: #C8E6C9;
+  --color-sidebar-ring: #9EEABE; /* updated to match primary */
 
   --color-text-secondary: rgba(255, 255, 255, 0.8);
   --color-gradient-orb-1: #2E5C3E;
