@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -95,15 +95,15 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
         className="rounded-full object-cover w-14 h-14"
       />
       <div>
-        <p className="text-black text-lg font-bold capitalize">{testimonial.name}</p>
-        <p className="text-zinc-600 text-sm capitalize">{testimonial.title}</p>
+        <p className="text-foreground text-lg font-bold capitalize">{testimonial.name}</p>
+        <p className="text-text-secondary text-sm capitalize">{testimonial.title}</p>
       </div>
     </div>
-    <p className="text-black text-xl font-semibold leading-7 my-6 flex-grow">
+    <p className="text-foreground text-xl font-semibold leading-7 my-6 flex-grow">
       {testimonial.quote}
     </p>
     <div>
-      <p className="text-zinc-600 text-xs mb-3">
+      <p className="text-text-secondary text-xs mb-3">
         Started with {testimonial.initialFollowers} Followers
       </p>
       <div className="flex items-start space-x-6">
@@ -111,17 +111,17 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           <div key={i}>
             <div className="flex items-center space-x-1.5">
               <StatIcon />
-              <p className="text-black font-bold text-lg">
-                <CountingNumber 
-                  value={stat.value} 
-                  suffix={stat.suffix} 
+              <p className="text-foreground font-bold text-lg">
+                <CountingNumber
+                  value={stat.value}
+                  suffix={stat.suffix}
                   decimals={stat.decimals || 0}
                   duration={2000}
                   delay={i * 200}
                 />
               </p>
             </div>
-            <p className="text-zinc-500 text-xs uppercase tracking-wider mt-1 pl-[22px]">
+            <p className="text-text-secondary text-xs uppercase tracking-wider mt-1 pl-[22px]">
               {stat.label}
             </p>
           </div>
@@ -136,7 +136,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-background font-body py-20 lg:py-32">
-       <div className="container mx-auto px-6 md:px-20 text-center">
+      <div className="container mx-auto px-6 md:px-20 text-center">
         <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">Success Stories</h2>
         <p className="mt-4 max-w-xl mx-auto text-base text-text-secondary">
           Clients don't just love us because we save them time. It's because we also get them results.
@@ -145,12 +145,12 @@ const Testimonials = () => {
           View All Client Success
         </Link>
       </div>
-      
-      <div className="mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
+
+      <div className="mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
         <div className="flex gap-8 will-change-transform [animation:marquee_80s_linear_infinite]">
           {extendedTestimonials.map((testimonial, index) => (
             <div key={index} className="flex-shrink-0">
-               <TestimonialCard testimonial={testimonial} />
+              <TestimonialCard testimonial={testimonial} />
             </div>
           ))}
         </div>

@@ -75,7 +75,7 @@ export default function Navigation() {
       {mobile && (
          <Link
             href="/submit-form"
-            className="text-base font-semibold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-[0_4px_16px_rgba(200,230,201,0.4)] hover:scale-105"
+            className="text-base font-semibold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-[0_4px_16px_rgba(117,251,126,0.4)] hover:scale-105"
           >
             Book a call
           </Link>
@@ -85,8 +85,8 @@ export default function Navigation() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b-4 border-primary shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out ${
-        isScrolled ? 'shadow-[0_8px_24px_rgba(0,0,0,0.12)]' : ''
+      className={`fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b-4 border-primary shadow-[0_4px_16px_rgba(0,0,0,0.5)] transition-all duration-300 ease-in-out ${
+        isScrolled ? 'shadow-[0_8px_24px_rgba(0,0,0,0.6)]' : ''
       }`}
     >
       <div className="container mx-auto px-6 md:px-20">
@@ -109,7 +109,7 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <Link
               href="/submit-form"
-              className="text-lg font-extrabold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-12 py-6 rounded-[12px] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(74,139,92,0.3)] hover:scale-110 shadow-[0_6px_20px_rgba(74,139,92,0.2)] hover:-translate-y-0.5"
+              className="text-lg font-extrabold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-12 py-6 rounded-[12px] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(117,251,126,0.4)] hover:scale-110 shadow-[0_6px_20px_rgba(117,251,126,0.3)] hover:-translate-y-0.5"
             >
               Book a call
             </Link>
@@ -128,7 +128,7 @@ export default function Navigation() {
       </div>
 
       {isMenuOpen && (
-        <div className={`lg:hidden absolute left-0 w-full bg-card py-8 border-t-4 border-primary shadow-[0_4px_16px_rgba(0,0,0,0.08)] animate-in slide-in-from-top-2 fade-in duration-300 ${
+        <div className={`lg:hidden absolute left-0 w-full bg-card py-8 border-t-4 border-primary shadow-[0_4px_16px_rgba(0,0,0,0.5)] animate-in slide-in-from-top-2 fade-in duration-300 ${
           isScrolled ? 'top-20' : 'top-28'
         }`}>
            <NavLinks mobile />

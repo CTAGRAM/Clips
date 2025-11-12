@@ -1,57 +1,45 @@
 import Navigation from '@/components/sections/navigation';
 import HeroSection from '@/components/sections/hero';
 import VideoCarousel from '@/components/sections/video-carousel';
-import StatsSection from '@/components/sections/stats';
-import SolutionsCards from '@/components/sections/solutions-cards';
+import Work from '@/components/sections/work';
+import ResultsCarousel from '@/components/sections/results-carousel';
 import BrandingHeader from '@/components/sections/branding-header';
 import Testimonials from '@/components/sections/testimonials';
-import GraphicsShowcase from '@/components/sections/graphics-showcase';
 import Pricing from '@/components/sections/pricing';
 import Process from '@/components/sections/process';
 import CtaFooter from '@/components/sections/cta-footer';
 import Footer from '@/components/sections/footer';
-import { CountingNumber } from '@/components/ui/counting-number';
 
 export default function Home() {
   return (
     <>
       <Navigation />
       <main>
-        {/* Hero: "You host, we handle the rest" */}
+        {/* Hero: "You Host. We Handle the Rest." */}
         <HeroSection />
         
         {/* Video carousel showcase */}
         <VideoCarousel />
         
-        {/* Work: Our video editing services */}
-        <SolutionsCards />
+        {/* Results: What clients can expect */}
+        <ResultsCarousel />
         
-        {/* Results: Fast, simple, affordable */}
-        <StatsSection />
+        {/* Work: Our Video Editing Work */}
+        <Work />
         
-        {/* Shows: Current shows we're managing */}
+        {/* Shows: Our Current Shows We're Managing */}
         <BrandingHeader />
         
         {/* Testimonials */}
         <Testimonials />
         
-        {/* Graphics & Design Work with Client Stories */}
-        <GraphicsShowcase />
-        
-        {/* Pricing Plans */}
+        {/* Plans: What's included */}
         <Pricing />
         
-        {/* Process: 3-step workflow */}
+        {/* Process: Simple & transparent */}
         <Process />
         
-        {/* Organic views highlight */}
-        <section className="py-32 bg-background text-center">
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">
-            <CountingNumber value={50} suffix="M+" duration={2000} delay={200} />+ of organic views
-          </h2>
-        </section>
-        
-        {/* CTA: Book a call */}
+        {/* CTA: Book a Free Strategy Call */}
         <CtaFooter />
       </main>
       <Footer />

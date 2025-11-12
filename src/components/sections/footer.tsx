@@ -3,7 +3,7 @@ import { Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f5f3ef] text-black pt-20 pb-20 font-body">
+    <footer className="bg-card text-text-secondary pt-20 pb-20 font-body border-t border-border">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-20 mb-20">
           
@@ -15,28 +15,28 @@ const Footer = () => {
                 alt="TheClipsAgency Logo"
                 width={200}
                 height={27}
-                className="w-48 lg:w-auto"
+                className="w-48 lg:w-auto brightness-0 invert opacity-90"
               />
             </a>
           </div>
           
           {/* Column 2: Solutions */}
           <div>
-            <h3 className="font-bold text-base mb-6">Solutions</h3>
+            <h3 className="font-bold text-base mb-6 text-foreground">Solutions</h3>
             <ul className="space-y-4">
-              <li><a href="/ghosthost" className="font-medium text-base hover:text-primary transition-colors">GhostHost™</a></li>
+              <li><a href="/ghosthost" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">GhostHost™</a></li>
             </ul>
           </div>
           
           {/* Column 3: Company */}
           <div>
-            <h3 className="font-bold text-base mb-6">Company</h3>
+            <h3 className="font-bold text-base mb-6 text-foreground">Company</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="font-medium text-base hover:text-primary transition-colors">What We Do</a></li>
-              <li><a href="/portfolio" className="font-medium text-base hover:text-primary transition-colors">Our Work</a></li>
-              <li><a href="/client-success" className="font-medium text-base hover:text-primary transition-colors">Client Success</a></li>
+              <li><a href="#" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">What We Do</a></li>
+              <li><a href="/portfolio" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">Our Work</a></li>
+              <li><a href="/client-success" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">Client Success</a></li>
               <li>
-                <a href="#" className="flex items-center gap-2 font-medium text-base hover:text-primary transition-colors">
+                <a href="#" className="flex items-center gap-2 font-medium text-base text-text-secondary hover:text-primary transition-colors">
                   Careers
                   <Image
                     src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/svgs/67028bcb131d41ce93f4f1d8_now-hiring-badge-4.svg"
@@ -51,10 +51,10 @@ const Footer = () => {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="font-bold text-base mb-6">Contact</h3>
+            <h3 className="font-bold text-base mb-6 text-foreground">Contact</h3>
             <ul className="space-y-4">
-              <li><a href="/submit-form" className="font-medium text-base hover:text-primary transition-colors">Book a Call</a></li>
-              <li><a href="#" className="font-medium text-base hover:text-primary transition-colors">Contact Support</a></li>
+              <li><a href="/submit-form" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">Book a Call</a></li>
+              <li><a href="#" className="font-medium text-base text-text-secondary hover:text-primary transition-colors">Contact Support</a></li>
             </ul>
           </div>
         </div>
@@ -64,14 +64,14 @@ const Footer = () => {
           {/* Left Side: Socials and Copyright */}
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
-              <a href="#" aria-label="Instagram" className="text-black hover:opacity-75 transition-opacity">
+              <a href="#" aria-label="Instagram" className="text-text-secondary hover:text-primary transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-black hover:opacity-75 transition-opacity">
+              <a href="#" aria-label="LinkedIn" className="text-text-secondary hover:text-primary transition-colors">
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
-            <div className="text-sm text-[#666666]">
+            <div className="text-sm text-text-secondary">
               <p>The Clips Agency® 2024 All Rights Reserved</p>
               <p className="mt-2 max-w-sm text-xs">
                 All content and materials on this site are protected by copyright and trademark laws and are the property of The Clips Agency. Unauthorized use is prohibited.
@@ -81,7 +81,7 @@ const Footer = () => {
           
           {/* Right Side: Privacy Policy */}
           <div className="w-full md:w-auto text-left md:text-right">
-            <a href="#" className="text-sm text-[#666666] hover:text-primary transition-colors">
+            <a href="#" className="text-sm text-text-secondary hover:text-primary transition-colors">
               Privacy Policy
             </a>
           </div>

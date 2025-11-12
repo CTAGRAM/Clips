@@ -102,25 +102,35 @@ const Pricing = () => {
                   </p>
                 </div>
 
-              <button className="w-full bg-accent text-accent-foreground rounded-[12px] px-6 py-4 font-semibold text-base transition-all duration-300 hover:shadow-button-hover mb-8">
-                Get Started
-              </button>
+                <button className="w-full bg-accent text-accent-foreground rounded-[12px] px-6 py-4 font-semibold text-base transition-all duration-300 hover:shadow-button-hover mb-8">
+                  Get Started
+                </button>
 
-              <div className="space-y-4">
-                {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-icon-accent flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                <div className="space-y-4">
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-icon-accent flex items-center justify-center mt-0.5">
+                        <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                      </div>
+                      <span className="text-secondary-foreground text-sm leading-relaxed">
+                        {feature}
+                      </span>
                     </div>
-                    <span className="text-secondary-foreground text-sm leading-relaxed">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <p className="text-text-secondary text-lg">
+            Need a custom plan?{" "}
+            <a href="#" className="text-primary hover:text-primary/80 font-semibold underline transition-colors">
+              Contact us
+            </a>
+          </p>
         </div>
       </div>
     </section>

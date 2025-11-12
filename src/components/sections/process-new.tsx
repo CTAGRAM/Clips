@@ -66,7 +66,7 @@ const Process = () => {
                 key={index}
                 className="relative bg-card rounded-[24px] p-8 hover:bg-card-hover transition-all duration-300 shadow-card"
               >
-                <div className="absolute top-8 right-8 text-6xl font-bold text-primary/8">
+                <div className="absolute top-8 right-8 text-6xl font-bold text-primary/10">
                   {step.number}
                 </div>
                 
