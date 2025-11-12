@@ -66,11 +66,11 @@ export default function Navigation() {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-primary/20 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0D0D1A] border-b-4 border-primary shadow-[0_10px_40px_rgba(200,230,201,0.4),0_0_100px_rgba(200,230,201,0.2)]">
       <div className="container mx-auto px-6 md:px-20">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           <Link href="/" aria-label="home" onClick={() => isMenuOpen && setIsMenuOpen(false)}>
-            <Logo className="w-[180px] h-auto" />
+            <Logo className="w-[220px] h-auto drop-shadow-[0_0_10px_rgba(200,230,201,0.3)]" />
           </Link>
 
           <NavLinks />
@@ -78,7 +78,7 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <Link
               href="/submit-form"
-              className="text-base font-semibold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-[0_4px_16px_rgba(200,230,201,0.4)] hover:scale-105"
+              className="text-lg font-extrabold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-12 py-6 rounded-[12px] transition-all hover:shadow-[0_10px_30px_rgba(200,230,201,0.8)] hover:scale-110 shadow-[0_6px_20px_rgba(200,230,201,0.5)] animate-pulse"
             >
               Book a call
             </Link>
@@ -90,14 +90,14 @@ export default function Navigation() {
               className="text-white p-2"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-background/98 py-8 border-t border-primary/20 shadow-[0_8px_24px_rgba(0,0,0,0.6)] backdrop-blur-lg">
+        <div className="lg:hidden absolute top-28 left-0 w-full bg-[#0D0D1A] py-8 border-t-4 border-primary shadow-[0_10px_40px_rgba(200,230,201,0.4)]">
            <NavLinks mobile />
         </div>
       )}
