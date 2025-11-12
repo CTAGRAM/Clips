@@ -57,7 +57,7 @@ export default function Navigation() {
       {mobile && (
          <Link
             href="/submit-form"
-            className="text-base font-semibold leading-none tracking-[0.02em] bg-accent text-accent-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
+            className="text-base font-semibold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-[0_4px_16px_rgba(200,230,201,0.4)] hover:scale-105"
           >
             Book a call
           </Link>
@@ -66,7 +66,7 @@ export default function Navigation() {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B0B1F]/90 backdrop-blur-md border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-primary/20 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
       <div className="container mx-auto px-6 md:px-20">
         <div className="flex items-center justify-between h-20">
           <Link href="/" aria-label="home" onClick={() => isMenuOpen && setIsMenuOpen(false)}>
@@ -78,7 +78,7 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <Link
               href="/submit-form"
-              className="text-base font-semibold leading-none tracking-[0.02em] bg-accent text-accent-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
+              className="text-base font-semibold leading-none tracking-[0.02em] bg-primary text-primary-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-[0_4px_16px_rgba(200,230,201,0.4)] hover:scale-105"
             >
               Book a call
             </Link>
@@ -97,7 +97,7 @@ export default function Navigation() {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#0B0B1F] py-8 border-t border-white/5">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-background/98 py-8 border-t border-primary/20 shadow-[0_8px_24px_rgba(0,0,0,0.6)] backdrop-blur-lg">
            <NavLinks mobile />
         </div>
       )}
