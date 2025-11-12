@@ -13,33 +13,33 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-background: #0A0A14;
-  --color-foreground: #FFFFFF;
+  --color-background: #D5F0C0;
+  --color-foreground: #2E6F40;
 
-  --color-card: #0D0D1A;
-  --color-card-foreground: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #2E6F40;
 
-  --color-popover: #0D0D1A;
-  --color-popover-foreground: #FFFFFF;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #2E6F40;
 
-  --color-primary: #9EEABE; /* updated to match provided image */
-  --color-primary-foreground: #000000;
+  --color-primary: #2E6F40;
+  --color-primary-foreground: #FFFFFF;
 
   --color-secondary: #E8F5E9;
-  --color-secondary-foreground: #000000;
+  --color-secondary-foreground: #2E6F40;
 
-  --color-muted: #A0A0B0;
-  --color-muted-foreground: #A0A0B0;
+  --color-muted: #5A7A5A;
+  --color-muted-foreground: #5A7A5A;
 
-  --color-accent: #000000;
+  --color-accent: #2E6F40;
   --color-accent-foreground: #FFFFFF;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #2A2A3A;
-  --color-input: rgba(255, 255, 255, 0.1);
-  --color-ring: #9EEABE; /* updated to match primary */
+  --color-border: #B5DFB2;
+  --color-input: rgba(46, 111, 64, 0.1);
+  --color-ring: #2E6F40;
 
   --color-chart-1: #e67e22;
   --color-chart-2: #2d8659;
@@ -47,24 +47,24 @@
   --color-chart-4: #f1c40f;
   --color-chart-5: #e74c3c;
 
-  --color-sidebar: #F5F5F5;
-  --color-sidebar-foreground: #000000;
-  --color-sidebar-primary: #000000;
-  --color-sidebar-primary-foreground: #9EEABE; /* updated to match primary */
-  --color-sidebar-accent: #E8F5E9;
-  --color-sidebar-accent-foreground: #000000;
-  --color-sidebar-border: #E5E5E5;
-  --color-sidebar-ring: #9EEABE; /* updated to match primary */
+  --color-sidebar: #E8F5E9;
+  --color-sidebar-foreground: #2E6F40;
+  --color-sidebar-primary: #2E6F40;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #D5F0C0;
+  --color-sidebar-accent-foreground: #2E6F40;
+  --color-sidebar-border: #B5DFB2;
+  --color-sidebar-ring: #2E6F40;
 
-  --color-text-secondary: rgba(255, 255, 255, 0.8);
-  --color-gradient-orb-1: #2E5C3E;
-  --color-gradient-orb-2: #4A8B5C;
-  --color-success-metric: #4CAF50;
-  --color-card-hover: rgba(255, 255, 255, 0.05);
-  --color-icon-accent: #000000;
-  --color-footer-background: #F9F9F7;
-  --color-footer-text: #000000;
-  --color-footer-link-hover: #2E5C3E;
+  --color-text-secondary: rgba(46, 111, 64, 0.75);
+  --color-gradient-orb-1: #B5DFB2;
+  --color-gradient-orb-2: #96D4AF;
+  --color-success-metric: #2E6F40;
+  --color-card-hover: rgba(46, 111, 64, 0.03);
+  --color-icon-accent: #2E6F40;
+  --color-footer-background: #E8F5E9;
+  --color-footer-text: #2E6F40;
+  --color-footer-link-hover: #1A4D2A;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -74,10 +74,10 @@
   --radius-portfolio: 16px;
   --radius-small-elements: 8px;
 
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-elevated-card: 0 12px 48px rgba(0, 0, 0, 0.6);
-  --shadow-button-hover: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-text-hero: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevated-card: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-button-hover: 0 4px 16px rgba(74, 139, 92, 0.3);
+  --shadow-text-hero: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -186,7 +186,6 @@
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--foreground);
-    text-shadow: var(--shadow-text-hero);
   }
 
   h2 {

@@ -41,9 +41,9 @@ const features = [
 
 const SolutionsCards = () => {
   return (
-    <section className="bg-[#0A0A14] py-20 lg:py-32">
+    <section className="bg-background py-20 lg:py-32">
       <div className="container mx-auto px-6 md:px-20">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-center mb-16">
           Our video editing work
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">

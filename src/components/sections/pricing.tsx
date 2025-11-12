@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react';
 import { Check } from 'lucide-react';
 import { CountingNumber } from '@/components/ui/counting-number';
 
@@ -61,35 +60,8 @@ const pricingPlans = [
 ];
 
 const Pricing = () => {
-  const ref = useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.unobserve(element);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <section
-      ref={ref}
-      className="py-32 px-6 bg-background"
-    >
+    <section className="py-32 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -103,40 +75,34 @@ const Pricing = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
-            <div
-              key={plan.name}
-              className={cn(
-                "relative bg-secondary rounded-[24px] p-8 md:p-10 transition-all duration-300 hover:scale-105 hover:shadow-elevated-card",
-                isInView
-                  ? "animate-in fade-in slide-in-from-bottom-5 duration-700 ease-out"
-                  : "opacity-0"
-              )}
-              style={{
-                animationDelay: isInView ? `${index * 150}ms` : '0ms'
-              }}
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold">
-                  Most Popular
-                </div>
-              )}
+          {pricingPlans.map((plan, index) => {
+            const baseDelay = index * 150; // Stagger each card
+            return (
+              <div
+                key={plan.name}
+                className="relative bg-secondary rounded-[24px] p-8 md:p-10 transition-all duration-300"
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </div>
+                )}
 
-              <div className="mb-8">
-                <h3 className="text-3xl font-bold text-secondary-foreground mb-3">
-                  {plan.name}
-                </h3>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-5xl font-bold text-secondary-foreground">
-                    <CountingNumber value={plan.price} prefix="$" duration={2000} delay={index * 150} />
-                  </span>
+                <div className="mb-8">
+                  <h3 className="text-3xl font-bold text-secondary-foreground mb-3">
+                    {plan.name}
+                  </h3>
+                  <div className="mb-2">
+                    <span className="text-5xl font-bold text-secondary-foreground">
+                      $<CountingNumber value={plan.price} duration={2000} delay={baseDelay + 100} />
+                    </span>
+                  </div>
+                  <p className="text-base text-secondary-foreground/80">
+                    <CountingNumber value={plan.pods} duration={1500} delay={baseDelay + 200} /> Pod - $<CountingNumber value={plan.price} duration={2000} delay={baseDelay + 300} />{plan.name === "Creator Plan" ? "" : " "}($<CountingNumber value={plan.pricePerPod} duration={1500} delay={baseDelay + 400} /> per pod)
+                  </p>
                 </div>
-                <p className="text-sm text-secondary-foreground/70">
-                  <CountingNumber value={plan.pods} duration={1500} delay={index * 150 + 200} /> Pods • $<CountingNumber value={plan.pricePerPod} duration={1500} delay={index * 150 + 300} /> per pod
-                </p>
-              </div>
 
-              <button className="w-full bg-accent text-accent-foreground rounded-[12px] px-6 py-4 font-semibold text-base transition-all duration-300 hover:shadow-button-hover hover:scale-105 mb-8">
+              <button className="w-full bg-accent text-accent-foreground rounded-[12px] px-6 py-4 font-semibold text-base transition-all duration-300 hover:shadow-button-hover mb-8">
                 Get Started
               </button>
 
@@ -152,18 +118,9 @@ const Pricing = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-text-secondary text-lg">
-            Need a custom plan?{" "}
-            <a href="#" className="text-primary hover:text-primary/80 font-semibold underline transition-colors">
-              Contact us
-            </a>
-          </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

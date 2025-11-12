@@ -135,9 +135,9 @@ const Testimonials = () => {
   const extendedTestimonials = [...testimonialsData, ...testimonialsData];
 
   return (
-    <section className="bg-[#0A0A14] font-body py-20 lg:py-32">
+    <section className="bg-background font-body py-20 lg:py-32">
        <div className="container mx-auto px-6 md:px-20 text-center">
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Success Stories</h2>
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">Success Stories</h2>
         <p className="mt-4 max-w-xl mx-auto text-base text-text-secondary">
           Clients don't just love us because we save them time. It's because we also get them results.
         </p>
@@ -146,7 +146,7 @@ const Testimonials = () => {
         </Link>
       </div>
       
-      <div className="mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <div className="mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
         <div className="flex gap-8 will-change-transform [animation:marquee_80s_linear_infinite]">
           {extendedTestimonials.map((testimonial, index) => (
             <div key={index} className="flex-shrink-0">

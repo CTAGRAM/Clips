@@ -25,9 +25,9 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="bg-[#0A0A14] py-20 lg:py-32">
+    <section className="bg-background py-20 lg:py-32">
       <div className="container mx-auto px-6 md:px-20">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-center mb-6">
           How it works
         </h2>
         <p className="text-text-secondary text-lg text-center max-w-2xl mx-auto mb-16">
@@ -40,9 +40,9 @@ const Process = () => {
             return (
               <div 
                 key={index}
-                className="relative bg-card rounded-[24px] p-8 hover:bg-card-hover transition-all duration-300"
+                className="relative bg-card rounded-[24px] p-8 hover:bg-card-hover transition-all duration-300 shadow-card"
               >
-                <div className="absolute top-8 right-8 text-6xl font-bold text-white/5">
+                <div className="absolute top-8 right-8 text-6xl font-bold text-primary/10">
                   {step.number}
                 </div>
                 
@@ -51,7 +51,7 @@ const Process = () => {
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
                     {step.title}
                   </h3>
                   

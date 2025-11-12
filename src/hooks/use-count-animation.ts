@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface UseCountAnimationOptions {
   duration?: number;
   delay?: number;
+}
+
+// Smooth easing function for better animation
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
 }
 
 export function useCountAnimation(
@@ -15,11 +20,21 @@ export function useCountAnimation(
   const { duration = 2000, delay = 0 } = options;
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
   const hasAnimated = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
+
+  // Combine refs
+  const combinedRef = (node: HTMLSpanElement | null) => {
+    ref.current = node;
+    inViewRef(node);
+  };
 
   useEffect(() => {
-    if (!isInView || hasAnimated.current) return;
+    if (!inView || hasAnimated.current) return;
 
     hasAnimated.current = true;
     const startTime = Date.now() + delay;
@@ -29,7 +44,7 @@ export function useCountAnimation(
       const now = Date.now();
       
       if (now < startTime) {
-        requestAnimationFrame(animate);
+        animationFrameRef.current = requestAnimationFrame(animate);
         return;
       }
 
@@ -38,16 +53,22 @@ export function useCountAnimation(
         return;
       }
 
-      const progress = (now - startTime) / duration;
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(easeOutQuart * target);
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const currentCount = Math.floor(easedProgress * target);
       
       setCount(currentCount);
-      requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    requestAnimationFrame(animate);
-  }, [isInView, target, duration, delay]);
+    animationFrameRef.current = requestAnimationFrame(animate);
 
-  return { count, ref };
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [inView, target, duration, delay]);
+
+  return { count, ref: combinedRef };
 }

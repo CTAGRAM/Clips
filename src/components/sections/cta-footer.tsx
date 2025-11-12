@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const CtaFooter = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#2E5C3E] via-[#4A8B5C] to-[#2E5C3E] py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#2E6F40] via-[#3A8B5C] to-[#2E6F40] py-24 lg:py-32 overflow-hidden">
       {/* Gradient Orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4A8B5C] rounded-full opacity-40 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2E5C3E] rounded-full opacity-30 blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#3A8B5C] rounded-full opacity-40 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2E6F40] rounded-full opacity-30 blur-[120px]" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 md:px-20 text-center">

@@ -47,9 +47,9 @@ const shows = [
 
 const BrandingHeader = () => {
   return (
-    <section className="bg-[#0A0A14] py-20 lg:py-32">
+    <section className="bg-background py-20 lg:py-32">
       <div className="container mx-auto px-6 md:px-20">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-center mb-6">
           Shows we power
         </h2>
         <p className="text-text-secondary text-lg text-center max-w-2xl mx-auto mb-16">
@@ -62,7 +62,7 @@ const BrandingHeader = () => {
               key={index}
               className="flex flex-col items-center text-center group"
             >
-              <div className="w-full aspect-[9/16] rounded-[16px] overflow-hidden mb-4 bg-card relative group-hover:scale-105 transition-transform duration-300">
+              <div className="w-full aspect-[9/16] rounded-[16px] overflow-hidden mb-4 bg-card relative group-hover:scale-105 transition-transform duration-300 shadow-card">
                 <Image
                   src={show.image}
                   alt={`${show.name} cover art`}
@@ -70,7 +70,7 @@ const BrandingHeader = () => {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-white font-semibold text-sm mb-1">
+              <h3 className="text-foreground font-semibold text-sm mb-1">
                 {show.name}
               </h3>
               <p className="text-muted text-xs">
