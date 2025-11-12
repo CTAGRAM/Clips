@@ -1,67 +1,48 @@
-import { Box, Clapperboard, Send } from "lucide-react";
+"use client";
 
-interface ValueProp {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
+import { CheckCircle } from "lucide-react";
 
-const valuePropsData: ValueProp[] = [
-  {
-    icon: Box,
-    title: "Nothing is unbranded",
-    description:
-      "In the world of branding, it's a runway. Will you sizzle and steal the show, or will you be lost in the background?",
-  },
-  {
-    icon: Clapperboard,
-    title: "Videos that drive engagements.",
-    description:
-      "Level up your online game with videos that don't just snag attention but set sparks flying in your audience.",
-  },
-  {
-    icon: Send,
-    title: "Removing all the headaches.",
-    description:
-      "Say adios to the hassle, and time-consuming tasks in content creation. Embrace a process that's all about doing more with less fuss.",
-  },
+const services = [
+  "Video podcast production",
+  "Transcripts, show notes & title options",
+  "Research & script support",
+  "Podcast consulting",
+  "Animation / sonic branding",
+  "Publishing & distribution",
+  "Growth & marketing support"
 ];
 
 const ValueProps = () => {
   return (
-    <section className="bg-background py-[120px] text-foreground">
-      <div className="container">
-        <div className="mx-auto mb-20 max-w-[616px] text-center">
-          <h2 className="font-display text-[48px] font-bold leading-[1.2]">
-            Branding, Content &amp; Systems.
+    <section className="bg-[#0A0A14] py-20 lg:py-32">
+      <div className="container mx-auto px-6 md:px-20">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">
+            What's included
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-secondary">
-            What happens when a branding agency who is obsessed with systems and
-            frameworks, decides to dive in the world content creation? you get
-            the clips agency.
+          <p className="text-text-secondary text-lg text-center mb-16">
+            Comprehensive podcast production services to elevate your show
           </p>
-        </div>
-
-        <div className="flex flex-col gap-16 md:flex-row md:gap-10">
-          {valuePropsData.map((prop, index) => (
-            <div
-              key={index}
-              className="flex flex-1 flex-col items-center text-center"
-            >
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/20">
-                <prop.icon
-                  className="h-8 w-8 text-icon-accent"
-                  strokeWidth={1.5}
-                />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="flex items-start space-x-4 bg-card rounded-[16px] p-6 hover:bg-card-hover transition-colors duration-300"
+              >
+                <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
+                <p className="text-white text-lg">
+                  {service}
+                </p>
               </div>
-              <h3 className="mt-6 text-[32px] font-bold leading-[1.3] text-white">
-                {prop.title}
-              </h3>
-              <p className="mt-3 text-base leading-[1.6] text-slate-400">
-                {prop.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-text-secondary text-base">
+              Editing starts from <span className="text-white font-semibold">~$150</span> per episode
+            </p>
+          </div>
         </div>
       </div>
     </section>

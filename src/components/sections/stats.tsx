@@ -1,79 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { CountingNumber } from "@/components/ui/counting-number";
-
-// Animation variants for the container to stagger children
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-// Animation variants for each stat item and divider
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const StatCard = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
-  // Parse the value to extract number and suffix
-  const parseValue = (val: string) => {
-    if (val === "10X") return { number: 10, suffix: "X" };
-    if (val.includes("Hr")) return { number: 500, suffix: "Hr+" };
-    if (val.includes("M")) return { number: 50, suffix: "M+" };
-    return { number: 0, suffix: "" };
-  };
-
-  const { number, suffix } = parseValue(value);
-
-  return (
-    <motion.div
-      variants={itemVariants}
-      className="flex flex-col items-center text-center md:px-10"
-    >
-      <h2 className="font-sans text-[56px] font-bold leading-none tracking-[-0.02em] text-white">
-        <CountingNumber value={number} suffix={suffix} duration={2000} delay={delay} />
-      </h2>
-      <p className="mt-2 text-lg text-slate-400">{label}</p>
-    </motion.div>
-  );
-};
-
-const Divider = () => (
-  <motion.div
-    variants={itemVariants}
-    className="hidden h-16 w-px bg-white/10 md:block"
-  />
-);
+import { CountingNumber } from '@/components/ui/counting-number';
 
 const StatsSection = () => {
   return (
-    <div className="bg-background pt-[100px] pb-12 md:pb-24">
-      <motion.div
-        className="flex flex-col items-center justify-center gap-y-10 md:flex-row md:gap-y-0"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={containerVariants}
-      >
-        <StatCard value="500Hr+" label="Time Saved" delay={0} />
-        <Divider />
-        <StatCard value="50M+" label="Organic Views" delay={200} />
-        <Divider />
-        <StatCard value="10X" label="Credibility" delay={400} />
-      </motion.div>
-    </div>
+    <section className="bg-[#0A0A14] py-20 lg:py-32">
+      <div className="container mx-auto px-6 md:px-20">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+            Results
+          </h2>
+          <p className="text-xl md:text-2xl text-text-secondary mb-12">
+            Fast, simple, affordable delivery
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+            <div className="flex flex-col items-center">
+              <div className="text-6xl md:text-7xl font-bold text-white mb-4">
+                <CountingNumber value={24} suffix="" duration={2000} />
+                <span className="text-success-metric">hr</span>
+              </div>
+              <p className="text-muted text-lg uppercase tracking-wider">
+                First draft turnaround
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="text-6xl md:text-7xl font-bold text-white mb-4">
+                ~$<CountingNumber value={1000} suffix="" duration={2000} />
+              </div>
+              <p className="text-muted text-lg uppercase tracking-wider">
+                Monthly budget target
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-12 border-t border-border">
+            <p className="text-text-secondary text-lg">
+              Editing starts from ~$150 per episode
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

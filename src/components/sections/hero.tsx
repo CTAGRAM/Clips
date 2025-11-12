@@ -1,56 +1,44 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const HeroSection = () => {
+const Hero = () => {
   return (
-    <section className="relative bg-background pt-[160px] pb-[120px] overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A14]">
       {/* Gradient Orbs */}
-      <div className="absolute inset-0 z-0" aria-hidden="true">
-        <div
-          className="absolute -top-40 -left-80 w-[500px] h-[500px] bg-[var(--color-gradient-orb-1)] rounded-full opacity-20 blur-[120px] animate-pulse"
-          style={{ animationDuration: '8s' }}
-        />
-        <div
-          className="absolute top-12 -right-60 w-[600px] h-[600px] bg-[var(--color-gradient-orb-2)] rounded-full opacity-15 blur-[120px] animate-pulse"
-          style={{ animationDuration: '10s', animationDelay: '2s' }}
-        />
-        <div
-          className="absolute -bottom-60 left-[10%] w-[400px] h-[400px] bg-[var(--color-gradient-orb-2)] rounded-full opacity-15 blur-[120px] animate-pulse"
-          style={{ animationDuration: '9s', animationDelay: '1s' }}
-        />
-        <div
-          className="absolute -bottom-40 right-[5%] w-[500px] h-[500px] bg-[var(--color-gradient-orb-1)] rounded-full opacity-20 blur-[120px] animate-pulse"
-          style={{ animationDuration: '12s', animationDelay: '3s' }}
-        />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2E5C3E] rounded-full opacity-30 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#4A8B5C] rounded-full opacity-20 blur-[120px]" />
+        <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-[#2E5C3E] rounded-full opacity-25 blur-[100px]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-20">
-        <div className="flex flex-col items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="font-display text-[40px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground [text-shadow:var(--shadow-text-hero)]"
-          >
-            Supercharge your brand with viral signature clips
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="mt-[60px] max-w-[616px] font-body text-[20px] font-normal leading-[1.6] text-[color:var(--color-text-secondary)]"
-          >
-            If you're a busy creator with no time to edit or post consistently on social media but still recognize the need to grow your brand faster, then this is for you.
-          </motion.p>
+      <div className="relative z-10 container mx-auto px-6 md:px-20 text-center pt-32 pb-24">
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          You host. We handle the rest.
+        </h1>
+        <p className="mt-6 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+          Fast, reliable podcast editing for busy creators—designed to stay under ~$1,000/mo. 
+          We're a team of podcast editors and content specialists who turn raw recordings into 
+          polished, audience-ready episodes so you can focus on creating.
+        </p>
+        
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="#contact">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-semibold rounded-[12px]">
+              Get a free sample edit
+            </Button>
+          </Link>
+          <Link href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold rounded-[12px]">
+              Let's talk
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-export default HeroSection;
+export default Hero;
