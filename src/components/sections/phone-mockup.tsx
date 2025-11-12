@@ -39,7 +39,7 @@ const PhoneMockup = () => {
       )}
     >
       <div
-        className="w-full max-w-[375px] aspect-[1/2] rounded-[40px] bg-card p-3 border border-border shadow-[0_20px_60px_rgba(139,92,246,0.3)]"
+        className="w-full max-w-[375px] aspect-[1/2] rounded-[40px] bg-card p-3 border border-border shadow-[0_20px_60px_rgba(74,139,92,0.3)]"
       >
         <div
           className="w-full h-full rounded-[28px] bg-[#1a1a2e]"
