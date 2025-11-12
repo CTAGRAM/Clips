@@ -2,75 +2,76 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { CountingNumber } from '@/components/ui/counting-number';
 
 const testimonialsData = [
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/6720577b1055a4940102a304_dr_medhat-3.jpg",
     name: "Dr Medhat",
     title: "Pediatrician",
-    quote: "“I love working with this team. I feel so comfortable and everyone is amazing”",
+    quote: "I love working with this team. I feel so comfortable and everyone is amazing",
     initialFollowers: "0",
     stats: [
-      { value: "66K", label: "Followers Gained" },
-      { value: "13M+", label: "View Count" },
+      { value: 66, suffix: "K", label: "Followers Gained" },
+      { value: 13, suffix: "M+", label: "View Count" },
     ],
   },
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/672b6de56b76e3b2d676bec8_svenja-4.jpg",
     name: "svenja maltzahn",
     title: "Entrepreneur",
-    quote: "“I'm getting so many requests I think I should stop posting videos”",
+    quote: "I'm getting so many requests I think I should stop posting videos",
     initialFollowers: "0",
     stats: [
-      { value: "4.6K+", label: "Followers Gained" },
-      { value: "350K", label: "View Count" },
-      { value: "3K+", label: "Leads Generated" },
+      { value: 4.6, suffix: "K+", label: "Followers Gained", decimals: 1 },
+      { value: 350, suffix: "K", label: "View Count" },
+      { value: 3, suffix: "K+", label: "Leads Generated" },
     ],
   },
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/6720577b1055a4940102a304_dr_medhat-3.jpg",
     name: "Business Coach",
     title: "Coach",
-    quote: "“What I do with you in 1 hour used to take me a full day on a TV set. I gained so much insights from our sessions”",
+    quote: "What I do with you in 1 hour used to take me a full day on a TV set. I gained so much insights from our sessions",
     initialFollowers: "1.2K",
     stats: [
-      { value: "25K+", label: "Followers Gained" },
-      { value: "4.2M+", label: "View count" },
+      { value: 25, suffix: "K+", label: "Followers Gained" },
+      { value: 4.2, suffix: "M+", label: "View count", decimals: 1 },
     ],
   },
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/672b6de56b76e3b2d676bec8_svenja-4.jpg",
     name: "Agency Owner",
     title: "Founder",
-    quote: "“I'm like a puppet between your hands. It takes a village to do what you do. Really you have an amazing team”",
+    quote: "I'm like a puppet between your hands. It takes a village to do what you do. Really you have an amazing team",
     initialFollowers: "500",
     stats: [
-      { value: "15K+", label: "Followers Gained" },
-      { value: "2M+", label: "View Count" },
-      { value: "1.5K+", label: "Leads Generated" },
+      { value: 15, suffix: "K+", label: "Followers Gained" },
+      { value: 2, suffix: "M+", label: "View Count" },
+      { value: 1.5, suffix: "K+", label: "Leads Generated", decimals: 1 },
     ],
   },
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/6720577b1055a4940102a304_dr_medhat-3.jpg",
     name: "Startup Founder",
     title: "CEO",
-    quote: "“This is an amazing company. They helped me with the content ideas and the results are amazing”",
+    quote: "This is an amazing company. They helped me with the content ideas and the results are amazing",
     initialFollowers: "0",
     stats: [
-      { value: "78K", label: "Followers Gained" },
-      { value: "15M+", label: "View Count" },
+      { value: 78, suffix: "K", label: "Followers Gained" },
+      { value: 15, suffix: "M+", label: "View Count" },
     ],
   },
   {
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/icons/672b6de56b76e3b2d676bec8_svenja-4.jpg",
     name: "Brand Strategist",
     title: "Strategist",
-    quote: "“You understood what I wanted to achieve, and with your team I was able to go online and grow my brand”",
+    quote: "You understood what I wanted to achieve, and with your team I was able to go online and grow my brand",
     initialFollowers: "3.5K",
     stats: [
-      { value: "50K+", label: "Followers Gained" },
-      { value: "7M+", label: "View Count" },
-      { value: "5K+", label: "Leads Generated" },
+      { value: 50, suffix: "K+", label: "Followers Gained" },
+      { value: 7, suffix: "M+", label: "View Count" },
+      { value: 5, suffix: "K+", label: "Leads Generated" },
     ],
   },
 ];
@@ -110,7 +111,15 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           <div key={i}>
             <div className="flex items-center space-x-1.5">
               <StatIcon />
-              <p className="text-black font-bold text-lg">{stat.value}</p>
+              <p className="text-black font-bold text-lg">
+                <CountingNumber 
+                  value={stat.value} 
+                  suffix={stat.suffix} 
+                  decimals={stat.decimals || 0}
+                  duration={2000}
+                  delay={i * 200}
+                />
+              </p>
             </div>
             <p className="text-zinc-500 text-xs uppercase tracking-wider mt-1 pl-[22px]">
               {stat.label}

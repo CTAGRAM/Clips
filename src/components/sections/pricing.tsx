@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
+import { CountingNumber } from '@/components/ui/counting-number';
 
 const pricingPlans = [
   {
@@ -127,11 +128,11 @@ const Pricing = () => {
                 </h3>
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-bold text-secondary-foreground">
-                    ${plan.price}
+                    <CountingNumber value={plan.price} prefix="$" duration={2000} delay={index * 150} />
                   </span>
                 </div>
                 <p className="text-sm text-secondary-foreground/70">
-                  {plan.pods} Pods • ${plan.pricePerPod} per pod
+                  <CountingNumber value={plan.pods} duration={1500} delay={index * 150 + 200} /> Pods • $<CountingNumber value={plan.pricePerPod} duration={1500} delay={index * 150 + 300} /> per pod
                 </p>
               </div>
 

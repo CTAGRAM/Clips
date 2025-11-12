@@ -11,6 +11,7 @@ import Testimonials from '@/components/sections/testimonials';
 import Pricing from '@/components/sections/pricing';
 import CtaFooter from '@/components/sections/cta-footer';
 import Footer from '@/components/sections/footer';
+import { CountingNumber } from '@/components/ui/counting-number';
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
         <Pricing />
         <section className="py-32 bg-background text-center">
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">
-            50M+ of organic views
+            <CountingNumber value={50} suffix="M+" duration={2000} />+ of organic views
           </h2>
         </section>
         <CtaFooter />

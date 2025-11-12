@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { CountingNumber } from "@/components/ui/counting-number";
 
 // Animation variants for the container to stagger children
 const containerVariants = {
@@ -25,24 +26,29 @@ const itemVariants = {
   },
 };
 
-// Data for the stats
-const statsData = [
-  { value: "500Hr+", label: "Time Saved" },
-  { value: "50M+", label: "Organic Views" },
-  { value: "10X", label: "Credibility" },
-];
+const StatCard = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
+  // Parse the value to extract number and suffix
+  const parseValue = (val: string) => {
+    if (val === "10X") return { number: 10, suffix: "X" };
+    if (val.includes("Hr")) return { number: 500, suffix: "Hr+" };
+    if (val.includes("M")) return { number: 50, suffix: "M+" };
+    return { number: 0, suffix: "" };
+  };
 
-const StatCard = ({ value, label }: { value: string; label: string }) => (
-  <motion.div
-    variants={itemVariants}
-    className="flex flex-col items-center text-center md:px-10"
-  >
-    <h2 className="font-sans text-[56px] font-bold leading-none tracking-[-0.02em] text-white">
-      {value}
-    </h2>
-    <p className="mt-2 text-lg text-slate-400">{label}</p>
-  </motion.div>
-);
+  const { number, suffix } = parseValue(value);
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      className="flex flex-col items-center text-center md:px-10"
+    >
+      <h2 className="font-sans text-[56px] font-bold leading-none tracking-[-0.02em] text-white">
+        <CountingNumber value={number} suffix={suffix} duration={2000} delay={delay} />
+      </h2>
+      <p className="mt-2 text-lg text-slate-400">{label}</p>
+    </motion.div>
+  );
+};
 
 const Divider = () => (
   <motion.div
@@ -61,11 +67,11 @@ const StatsSection = () => {
         viewport={{ once: true, amount: 0.5 }}
         variants={containerVariants}
       >
-        <StatCard value={statsData[0].value} label={statsData[0].label} />
+        <StatCard value="500Hr+" label="Time Saved" delay={0} />
         <Divider />
-        <StatCard value={statsData[1].value} label={statsData[1].label} />
+        <StatCard value="50M+" label="Organic Views" delay={200} />
         <Divider />
-        <StatCard value={statsData[2].value} label={statsData[2].label} />
+        <StatCard value="10X" label="Credibility" delay={400} />
       </motion.div>
     </div>
   );
