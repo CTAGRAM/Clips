@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const CtaFooter = () => {
   return (
-    <section className="w-full bg-gradient-to-tr from-[#6b21a8] via-[#a855f7] to-[#ec4899] py-20 lg:py-[120px]">
+    <section className="w-full bg-gradient-to-tr from-[var(--color-gradient-orb-1)] via-[var(--color-gradient-orb-2)] to-[var(--color-gradient-orb-1)] py-20 lg:py-[120px]">
       <div className="container mx-auto flex flex-col items-center justify-center text-center">
         <p className="text-base font-normal text-text-secondary">
           Take your brand to the next level
@@ -12,7 +12,7 @@ const CtaFooter = () => {
         </h2>
         <Link
           href="/submit-form"
-          className="mt-10 inline-block animate-pulse rounded-xl bg-primary px-10 py-4 text-lg font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:animate-none hover:shadow-[0_4px_16px_rgba(212,255,0,0.3)]"
+          className="mt-10 inline-block animate-pulse rounded-xl bg-accent text-accent-foreground px-10 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:animate-none hover:shadow-button-hover"
         >
           Book a call
         </Link>

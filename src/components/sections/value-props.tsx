@@ -48,12 +48,9 @@ const ValueProps = () => {
               key={index}
               className="flex flex-1 flex-col items-center text-center"
             >
-              <div
-                className="flex h-20 w-20 items-center justify-center rounded-full"
-                style={{ backgroundColor: "rgba(139, 92, 246, 0.2)" }}
-              >
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/20">
                 <prop.icon
-                  className="h-8 w-8 text-[#C4A8FF]"
+                  className="h-8 w-8 text-icon-accent"
                   strokeWidth={1.5}
                 />
               </div>

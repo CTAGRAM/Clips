@@ -77,14 +77,14 @@ const testimonialsData = [
 
 const StatIcon = () => (
   <div className="w-4 h-4 rounded-full bg-primary flex items-center justify-center shrink-0">
-    <span className="text-black font-bold text-xs">+</span>
+    <span className="text-primary-foreground font-bold text-xs">+</span>
   </div>
 );
 
 type Testimonial = typeof testimonialsData[0];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="flex flex-col bg-gradient-to-b from-[#ffc9e8] to-[#e8d4ff] rounded-[24px] p-8 w-[400px] h-full">
+  <div className="flex flex-col bg-secondary rounded-[24px] p-8 w-[400px] h-full">
     <div className="flex items-center space-x-4">
       <Image
         src={testimonial.image}
@@ -132,7 +132,7 @@ const Testimonials = () => {
         <p className="mt-4 max-w-xl mx-auto text-base text-text-secondary">
           Clients don't just love us because we save them time. It's because we also get them results.
         </p>
-        <Link href="#" className="mt-8 inline-block bg-white text-black px-6 py-3 rounded-full font-semibold text-sm transition-transform hover:scale-105">
+        <Link href="#" className="mt-8 inline-block bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold text-sm transition-transform hover:scale-105">
           View All Client Success
         </Link>
       </div>

@@ -57,7 +57,7 @@ export default function Navigation() {
       {mobile && (
          <Link
             href="/submit-form"
-            className="text-base font-semibold leading-none tracking-[0.02em] text-white bg-gradient-to-r from-[#ED37A2] to-[#A855F7] px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
+            className="text-base font-semibold leading-none tracking-[0.02em] bg-accent text-accent-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
           >
             Book a call
           </Link>
@@ -84,7 +84,7 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <Link
               href="/submit-form"
-              className="text-base font-semibold leading-none tracking-[0.02em] text-white bg-gradient-to-r from-[#ED37A2] to-[#A855F7] px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
+              className="text-base font-semibold leading-none tracking-[0.02em] bg-accent text-accent-foreground px-8 py-4 rounded-[12px] transition-all hover:shadow-button-hover"
             >
               Book a call
             </Link>

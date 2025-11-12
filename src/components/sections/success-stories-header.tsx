@@ -16,7 +16,7 @@ const SuccessStoriesHeader = () => {
           </p>
           <Link
             href="/client-success"
-            className="mt-8 inline-block rounded-[8px] bg-[#F5E6FF] px-8 py-3 text-base font-medium text-black transition-opacity hover:opacity-90"
+            className="mt-8 inline-block rounded-[8px] bg-accent text-accent-foreground px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
           >
             View All Client Success
           </Link>

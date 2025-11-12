@@ -35,9 +35,9 @@ const solutionsData: Solution[] = [
 ];
 
 const SolutionCard: React.FC<Solution> = ({ icon: Icon, title, description, buttonText, buttonLink }) => (
-  <div className="bg-[#F5E6FF] rounded-[24px] p-12 flex flex-col">
-    <div className="w-16 h-16 rounded-full bg-[#E8D4FF] flex items-center justify-center">
-      <Icon className="w-8 h-8 text-black" strokeWidth={1.5} />
+  <div className="bg-secondary rounded-[24px] p-12 flex flex-col">
+    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+      <Icon className="w-8 h-8 text-primary-foreground" strokeWidth={1.5} />
     </div>
     <h3 className="text-black text-[40px] font-bold font-display leading-[1.1] mt-8">
       {title}
@@ -47,7 +47,7 @@ const SolutionCard: React.FC<Solution> = ({ icon: Icon, title, description, butt
     </p>
     <a
       href={buttonLink}
-      className="inline-block bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-xl text-base text-center w-fit mt-[100px] transition-all hover:bg-accent hover:shadow-button-hover"
+      className="inline-block bg-accent text-accent-foreground font-semibold py-3 px-8 rounded-xl text-base text-center w-fit mt-[100px] transition-all hover:shadow-button-hover"
     >
       {buttonText}
     </a>
