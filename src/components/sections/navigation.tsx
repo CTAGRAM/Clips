@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Logo from '@/components/logo';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -70,13 +70,7 @@ export default function Navigation() {
       <div className="container mx-auto px-6 md:px-20">
         <div className="flex items-center justify-between h-20">
           <Link href="/" aria-label="home" onClick={() => isMenuOpen && setIsMenuOpen(false)}>
-            <Image
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a93d8c77-2901-4b64-8e54-ce6f6469eefe-theclips-agency/assets/svgs/67025756be96d71592e4ed50_TheClipsAgency-1.svg"
-              alt="TheClipsAgency"
-              width={180}
-              height={22}
-              className="w-auto h-[22px]"
-            />
+            <Logo className="w-[180px] h-auto" />
           </Link>
 
           <NavLinks />
